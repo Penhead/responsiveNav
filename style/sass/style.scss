@@ -1,0 +1,135 @@
+//begin custom nav
+.menu { 
+-webkit-transition: all 0.3s ease;  
+-moz-transition: all 0.3s ease;
+-ms-transition: all 0.3s ease;
+transition: all 0.3s ease; 
+ 
+  ul{
+  padding: 0px;
+  margin: 0px;
+  list-style: none;
+  position: relative;
+  display: inline-table;
+    li {
+      &:hover > ul { display: block; }
+      > a { 
+      padding: 10px 12px; 
+      text-transform: uppercase;
+      font-family:  sans-serif;
+      }
+    }
+  ul { 
+  display: none; 
+  position: absolute; 
+  top:100%;
+  color: #808080 !important;   
+  background: #F4F4F4;
+    > li { 
+    position: relative;  
+    border-bottom: 2px solid white;    
+    padding-left: 30px !important; 
+    padding-right: 30px !important;
+      & a:hover {  
+      color: #F27420; 
+      }
+      a {  
+        height: auto;
+        background-color: #f4f4f4; 
+      }
+    }
+    ul { 
+    position: absolute; 
+    left: 100%; 
+    top:0;
+    }
+  }
+    li {
+    padding: 0px; 
+      a { 
+      display: block; 
+      text-decoration: none; 
+      color: #999; 
+      font-size: .9em; 
+      }
+      > ul.sub-menu{
+        min-width: 10em;
+        padding: 4px 0;
+        background-color: #f4f4f4;
+      }  
+    }
+  }
+  li.has-submenu > a > .dropdown-icon{
+  content: "";
+  display: block;
+  width: 0;
+  height: 0;
+  border: inset 5px;
+  border-color: rgba(0, 0, 0, 0.4) rgba(0, 0, 0, 0) rgba(0, 0, 0, 0) rgba(0, 0, 0, 0);border-top-style: solid;
+  float: right; 
+  margin-top: 5px;
+margin-left: 5px;
+  }
+  > ul > li { 
+  display: inline-block; 
+  }
+}
+ 
+.menu-link{
+  display: none;
+}
+ 
+@media all and (max-width: 826px) {
+  .container { 
+    width: 100%; 
+    }
+    a.menu-link { 
+      display: block; 
+      color: #999; 
+      float: right; 
+      text-decoration: none; 
+      padding: 0 15px;
+    }
+    .menu { 
+      clear: both; 
+      min-width: inherit; 
+      float: none; 
+      width: 100%;
+ 
+      > li > ul.sub-menu { 
+      padding: 0px; border: none; 
+      }
+      ul { 
+        display: inline; 
+      }
+      > ul { 
+        border-top: 1px solid #808080;
+      }
+      li, > ul > li { 
+        display: block; 
+      }
+      li a { 
+      color: #000; 
+      display: block; 
+      padding: 0.8em;  
+      position: relative; 
+      }
+      ul ul, ul ul ul { 
+       display: inherit; 
+       position: relative; 
+       left: auto; 
+       top:auto; 
+       border:none; 
+      }
+    }
+    .menu, .menu > ul ul { 
+      overflow: hidden; 
+      max-height: 0; 
+      background-color: #f4f4f4;
+    }
+    
+    .menu.active, .menu > ul ul.active { 
+      max-height: 55em; 
+    }
+ }
+//end custom nav
